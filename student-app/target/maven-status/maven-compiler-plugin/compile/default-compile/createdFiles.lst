@@ -1,0 +1,4 @@
+com\kamlesh\studentapp\repository\StudentRepository.class
+com\kamlesh\studentapp\StudentApp.class
+com\kamlesh\studentapp\model\Student.class
+com\kamlesh\studentapp\controller\StudentController.class
