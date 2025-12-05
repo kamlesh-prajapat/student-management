@@ -56,16 +56,27 @@ export default function App() {
     setEditingStudent(null);
     load();
   };
+  // Update student
+  const cancel = async () => {
+   
+    setForm({ name: "", email: "", course: "" });
+     setEditMode(false);
+    setEditingStudent(null);
+    load();
+  };
 
   // 🔎 Search by ID
   const searchStudent = async () => {
     if (!searchId) return alert("Enter a student ID!");
     try {
       const res = await axios.get(`${API}/${searchId}`);
+      if (res.data === null) return alert("Student not found!");
       setSearchResult(res.data);
+       
     } catch (err) {
       setSearchResult(null);
       alert("Student not found!");
+     
     }
   };
 
@@ -109,12 +120,21 @@ export default function App() {
             Add
           </button>
         ) : (
+          <div>
           <button
             onClick={update}
             style={{ background: "orange", color: "white", padding: "8px 12px" }}
           >
             Update
           </button>
+           <button
+            onClick={cancel}
+            style={{ background: "red", color: "white", padding: "8px 12px" , margin:"4px" }}
+          >
+            Cancel
+          </button>
+          </div>
+          
         )}
       </div>
 
