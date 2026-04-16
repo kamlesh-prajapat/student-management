@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/api/students")
-@CrossOrigin(origins = "http://localhost:5173") // allow React dev server
+@CrossOrigin(origins = "https://calm-selkie-25e1c0.netlify.app/") // allow React dev server
 public class StudentController {
 
   @Autowired
