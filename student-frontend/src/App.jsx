@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:8080/api/students";
+const API = "https://student-management-vqvt.onrender.com/api/students";
 
 export default function App() {
   const [students, setStudents] = useState([]);
